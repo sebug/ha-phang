@@ -15,3 +15,6 @@ Open a cloud shell in Azure
 
 The HAProxy cfg comes from https://idroot.us/install-haproxy-almalinux-8/
 
+## Test
+Get the public IP from the havm. See that it alternates sending you to the first and second IIS host.
+
