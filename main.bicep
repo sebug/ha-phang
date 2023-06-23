@@ -541,7 +541,7 @@ resource haProxyVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
 
 resource haProxyVMPostCreationScript 'Microsoft.Compute/virtualMachines/runCommands@2023-03-01' = {
   parent: haProxyVM
-  name: 'WebServerPrerequisites'
+  name: 'HAProxyPrerequisites'
   location: location
   properties: {
     source: {
