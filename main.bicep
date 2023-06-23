@@ -491,7 +491,7 @@ resource haProxyVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
       imageReference: {
         publisher: 'almalinux'
         offer: 'almalinux'
-        sku: '8-gen2'
+        sku: '9-gen2'
         version: 'latest'
       }
       osDisk: {
@@ -532,7 +532,7 @@ resource haProxyVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
     }
   }
   plan: {
-    name: '8-gen2'
+    name: '9-gen2'
     publisher: 'almalinux'
     product: 'almalinux'
   }
