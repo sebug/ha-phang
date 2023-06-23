@@ -9,3 +9,6 @@ echo -e "local2.notice\t/var/log/haproxy-info.log" | sudo tee -a /etc/rsyslog.d/
 sudo systemctl start rsyslog
 sudo systemctl enable rsyslog
 sudo systemctl restart haproxy
+sudo firewall-cmd --add-port=8088/tcp --permanent
+sudo firewall-cmd --add-port=80/tcp --permanent
+sudo firewall-cmd --reload
