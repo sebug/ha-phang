@@ -9,4 +9,6 @@ Create a resource group HAPhangRG
 
 Open a cloud shell in Azure
 
-    
+    git clone https://github.com/sebug/ha-phang/
+    cd ha-phang
+    az deployment group create -f ./main.bicep -g HAPhangRG

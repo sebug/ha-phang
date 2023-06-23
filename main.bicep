@@ -513,7 +513,7 @@ resource haProxyVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
         {
           id: externalNic.id
           properties: {
-            primary: false
+            primary: true
           }
         }
         {
