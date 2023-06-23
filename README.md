@@ -12,3 +12,6 @@ Open a cloud shell in Azure
     git clone https://github.com/sebug/ha-phang/
     cd ha-phang
     az deployment group create -f ./main.bicep -g HAPhangRG
+
+The HAProxy cfg comes from https://idroot.us/install-haproxy-almalinux-8/
+
