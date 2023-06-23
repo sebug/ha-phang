@@ -539,5 +539,14 @@ resource haProxyVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
 }
 
 
-
+resource haProxyVMPostCreationScript 'Microsoft.Compute/virtualMachines/runCommands@2023-03-01' = {
+  parent: haProxyVM
+  name: 'WebServerPrerequisites'
+  location: location
+  properties: {
+    source: {
+      scriptUri: 'https://raw.githubusercontent.com/sebug/ha-phang/main/ha_post_install.sh'
+    }
+  }
+}
 
