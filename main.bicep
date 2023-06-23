@@ -539,13 +539,20 @@ resource haProxyVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
 }
 
 
-resource haProxyVMPostCreationScript 'Microsoft.Compute/virtualMachines/runCommands@2023-03-01' = {
+resource haProxyVMPostCreationScript 'Microsoft.Compute/virtualMachines/extensions@2023-03-01' = {
   parent: haProxyVM
   name: 'HAProxyPrerequisites'
   location: location
   properties: {
-    source: {
-      scriptUri: 'https://raw.githubusercontent.com/sebug/ha-phang/main/ha_post_install.sh'
+    publisher: 'Microsoft.Azure.Extensions'
+    type: 'CustomScript'
+    typeHandlerVersion: '2.0'
+    autoUpgradeMinorVersion: true
+    settings: {
+     fileUris: [
+      'https://raw.githubusercontent.com/sebug/ha-phang/main/ha_post_install.sh'
+     ]
+     commandToExecute: 'sh ha_post_install.sh'
     }
   }
 }
